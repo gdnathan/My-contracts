@@ -1,0 +1,29 @@
+[toolchain]
+anchor_version = "0.29.0"
+
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+flow = "EjkfP8GZ4Q3BsteYfgGUEHzL7BvUPmRd82ktDc52pd6X"
+xtalk = "7zAtaTn5deKQ5LA9XPrYPzSSrTdysjzHgGMMpVgTqUQF"
+
+[programs.devnet]
+flow = "EjkfP8GZ4Q3BsteYfgGUEHzL7BvUPmRd82ktDc52pd6X"
+xtalk = "7zAtaTn5deKQ5LA9XPrYPzSSrTdysjzHgGMMpVgTqUQF"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "localnet"
+wallet = "/home/erudyx/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+initiate_xtalk = "npx ts-node ./scripts/initiate_xtalk.ts"
+initiate_flow = "npx ts-node ./scripts/initiate_flow.ts"
+emit_event = "npx ts-node ./scripts/emit_event.ts"
+entrypoint = "npx ts-node ./scripts/entrypoint.ts"
+called = "npx ts-node ./scripts/is_called.ts"
